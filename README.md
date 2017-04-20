@@ -1,5 +1,5 @@
 # .config
-Some of my configuration files in .config!
+Some of my configuration files!
 
 # Screenshots
 
