@@ -1,4 +1,4 @@
-# .config
+# config
 Some of my configuration files!
 
 # Screenshots
