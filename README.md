@@ -1,2 +1,2 @@
 # .config
-Some configuration files in .config!
+Some of my configuration files in .config!
