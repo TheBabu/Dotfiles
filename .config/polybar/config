@@ -266,7 +266,7 @@ interval = 3.0
 ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+label-connected = %essid%   %local_ip%
 label-disconnected =    Not Connected
 label-disconnected-foreground = #66
 
@@ -320,40 +320,50 @@ menu-0-0-exec = menu-open-1
 menu-0-1 = Logout
 menu-0-1-foreground = #fba922
 menu-0-1-exec = menu-open-2
-menu-0-2 = Reboot
+menu-0-2 = Suspend
 menu-0-2-foreground = #fba922
 menu-0-2-exec = menu-open-3
-menu-0-3 = Shutdown
+menu-0-3 = Reboot
 menu-0-3-foreground = #fba922
 menu-0-3-exec = menu-open-4
+menu-0-4 = Shutdown
+menu-0-4-foreground = #fba922
+menu-0-4-exec = menu-open-5
 
 menu-1-0 = Lock
 menu-1-0-foreground = #ff5555
-menu-1-1 = Cancel
 menu-1-0-exec = i3lock --insidevercolor=101010bf --insidewrongcolor=101010bf --insidecolor=101010bf --ringvercolor=30309bff --ringwrongcolor=dd1818ff --ringcolor=30309bff --textcolor=c7d9dbbb --linecolor=00000000 --keyhlcolor=115cddff --bshlcolor=bc0303ff -i ~/.config/polybar/XgLhsEH.png
+menu-1-1 = Cancel
 menu-1-1-foreground = #fba922
 menu-1-1-exec = menu-close
 
 menu-2-0 = Logout
 menu-2-0-foreground = #ff5555
-menu-2-1 = Cancel
 menu-2-0-exec = i3-msg exit
+menu-2-1 = Cancel
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu-close
 
-menu-3-0 = Reboot
+menu-3-0 = Suspend
 menu-3-0-foreground = #ff5555
-menu-3-0-exec = reboot
+menu-3-0-exec = systemctl suspend
 menu-3-1 = Cancel
 menu-3-1-foreground = #fba922
 menu-3-1-exec = menu-close
 
-menu-4-0 = Shutdown
+menu-4-0 = Reboot
 menu-4-0-foreground = #ff5555
-menu-4-0-exec = shutdown now
+menu-4-0-exec = reboot
 menu-4-1 = Cancel
 menu-4-1-foreground = #fba922
 menu-4-1-exec = menu-close
+
+menu-5-0 = Shutdown
+menu-5-0-foreground = #ff5555
+menu-5-0-exec = shutdown now
+menu-5-1 = Cancel
+menu-5-1-foreground = #fba922
+menu-5-1-exec = menu-close
 
 [module/clock]
 type = internal/date
