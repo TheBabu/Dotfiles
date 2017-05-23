@@ -209,9 +209,14 @@ ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%m/%d/%Y%%{F-}  %%{F#fff}%H:%M%%{F-}
-;date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-;date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+format-prefix = "   "
+label = %{F#99}%date%%{F-}   %{F#fff}%time%%{F-}
+date = %m/%d/%Y
+date-alt = %%{F#fff}%A, %B %d, %Y%%{F-}
+time = %I:%M %p
+time-alt = ${self.time}
+;date =    %%{F#99} %m/%d/%Y %{F-} %%{F#fff} %I:%M %p %{F-}
+;date-alt =    %%{F#fff} %A, %B %d, %Y %{F-} %%{F#fff} %I:%M %p %{F-}
 
 [module/memory]
 type = internal/memory
@@ -266,7 +271,7 @@ interval = 3.0
 ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%   %local_ip%
+label-connected = %essid%   %{F#999}%local_ip%%{F-}
 label-disconnected =    Not Connected
 label-disconnected-foreground = #66
 

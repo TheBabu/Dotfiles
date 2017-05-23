@@ -28,3 +28,7 @@ if ! pgrep -x xcompmgr -c -f -n >/dev/null
 then xcompmgr -c -f -n &
 fi
 
+if ! pgrep -x polkit-gnome-authentication-agent-1 >/dev/null
+then /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+fi
+

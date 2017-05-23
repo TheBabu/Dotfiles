@@ -157,6 +157,7 @@ bindsym $mod+r mode "Resize"
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
+exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=1 TapButton3=1
 
 bindsym $mod+Shift+d exec $HOME/.screenlayout/Display.sh
 bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 47
