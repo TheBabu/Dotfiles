@@ -4,5 +4,5 @@ Some of my configuration files!
 # Screenshot
 
 
-[![Screenshot](https://plus.google.com/u/0/photos/albums/pdfmhi3ku1bngd5pg1taki510t5e7862l?pid=6439144294081909186&oid=118194333507067826986)
+[![Screenshot](https://lh3.googleusercontent.com/--DvvKqtOrew/WVxvnpI8UcI/AAAAAAAANIU/VkVMW6T3pbAsvIqya7G9Fw2LKcavBBxkgCL0BGAYYCw/h1080/Screenshot_2017-07-04_21-47-58.png)
 
