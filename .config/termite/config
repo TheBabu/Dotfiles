@@ -1,10 +1,10 @@
 [options]
 font = Cousine 11
-geometry = 735x470
+geometry = 735x450
 
 # Molokai theme
 [colors]
-background= #222
+background= #282828
 #background= rgba(16, 16, 16, 0.85)
 foreground= #d0d0d0
 #foreground= #66ff66
