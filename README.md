@@ -1,5 +1,5 @@
 # Config
-Some of my configuration files!
+Some of my configuration (dotfiles) files!
 
 # Software
 - i3-gaps
