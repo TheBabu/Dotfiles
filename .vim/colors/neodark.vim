@@ -169,6 +169,7 @@ let s:beige      = ['#C7C18B', 180]
 let s:light_blue = ['#72C7D1', 80]
 let s:brown      = ['#AE8785', 138]
 let s:warmgrey   = ['#75715E', 59]
+let s:darkred    = ['#E73C50',  196]
 
 if g:neodark#use_256color == 1
   let s:base1[0] = '#303030'
@@ -262,7 +263,8 @@ call s:hi('PmenuSel',                  s:base2,      s:green,    '')
 call s:hi('PmenuThumb',                '',           s:base4,    '')
 call s:hi('Question',                  s:blue,       '',         'none')
 call s:hi('Search',                    s:base1,      s:beige,    '')
-call s:hi('SignColumn',                s:base5,      s:base1,    '')
+highlight clear SignColumn
+call s:hi('SignColumn',                '',      '',    '')
 call s:hi('SpecialKey',                s:warmgrey,      '',         '')
 call s:hi('SpellBad',                  s:base1,        s:red,    '')
 call s:hi('SpellCap',                  s:brown,      s:base1,    'none')
@@ -302,7 +304,8 @@ call s:hi('StorageClass',              s:teal,       '',         '')
 call s:hi('Special',                   s:pink,       '',         '')
 call s:hi('Delimiter',                 s:base5,      '',         '')
 call s:hi('Underlined',                s:base5,      '',         'underline')
-call s:hi('Error',                     s:red,        s:base1,    'bold')
+highlight clear Error
+call s:hi('Error',                     s:darkred,    '',    'bold')
 call s:hi('Todo',                      s:base5,      s:base1,    'bold')
 call s:hi('Conceal',                   s:beige,      s:base1,    '')
 

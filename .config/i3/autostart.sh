@@ -32,3 +32,7 @@ if ! pgrep -x polkit-gnome-authentication-agent-1 >/dev/null
 then /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
+if ! pgrep -x pasystray >/dev/null
+then pasystray &
+fi
+
