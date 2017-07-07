@@ -2,7 +2,7 @@
 font = Cousine 11
 geometry = 735x450
 
-# Molokai theme
+#Molokai theme
 [colors]
 background= #282828
 #background= rgba(16, 16, 16, 0.85)

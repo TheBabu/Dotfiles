@@ -101,7 +101,7 @@ for_window [class="Blueman"] floating enable
 for_window [class="vokoscreen"] floating enable
 force_xinerama yes
 focus_follows_mouse no
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 10
 smart_gaps on
