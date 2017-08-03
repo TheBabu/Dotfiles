@@ -1,6 +1,6 @@
 [options]
-font = Cousine 11
-geometry = 735x450
+font = Cousine 12
+geometry = 800x500
 
 #Molokai theme
 [colors]
