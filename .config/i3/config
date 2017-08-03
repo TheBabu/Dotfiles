@@ -71,14 +71,16 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+#Function Keybindings
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
 #Special Keybindings
 bindsym $mod+Shift+d exec $HOME/.screenlayout/Display.sh
 bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 47
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioMute exec amixer set Master toggle
 
 #Resize
 mode "Resize" {
@@ -111,7 +113,10 @@ smart_borders on
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/i3/autostart.sh
 #exec_always --no-startup-id python $HOME/.config/i3/i3ipc\ Border.py
-exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=1 TapButton3=1
+exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=1 TapButton3=1 ClickFinger2=3 TapButton2=3
+
+#Assign Workspace
+assign [class="discord"] 10
 
 #Border Colors
 client.focused           #30309b #30309b #30309b #30309b   #30309b

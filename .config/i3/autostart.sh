@@ -16,10 +16,6 @@ if ! pgrep -x nm-applet >/dev/null
 then nm-applet &
 fi
 
-if ! pgrep -x xfce4-volumed-p >/dev/null
-then xfce4-volumed-pulse &
-fi
-
 if ! pgrep -x xfce4-clipman >/dev/null
 then xfce4-clipman &
 fi
