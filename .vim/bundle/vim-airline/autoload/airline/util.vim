@@ -1,14 +1,23 @@
 " MIT License. Copyright (c) 2013-2016 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
+" TODO: Try to cache winwidth(0) function
+" e.g. store winwidth per window and access that, only update it, if the size
+" actually changed.
 scriptencoding utf-8
 
 call airline#init#bootstrap()
 let s:spc = g:airline_symbols.space
 
-function! airline#util#shorten(text, winwidth, minwidth)
+function! airline#util#shorten(text, winwidth, minwidth, ...)
   if winwidth(0) < a:winwidth && len(split(a:text, '\zs')) > a:minwidth
-    return matchstr(a:text, '^.\{'.a:minwidth.'}').'…'
+    if get(a:000, 0, 0)
+      " shorten from tail
+      return '…'.matchstr(a:text, '.\{'.a:minwidth.'}$')
+    else
+      " shorten from beginning of string
+      return matchstr(a:text, '^.\{'.a:minwidth.'}').'…'
+    endif
   else
     return a:text
   endif

@@ -105,6 +105,9 @@ vim-airline integrates with a variety of plugins out of the box.  These extensio
 #### [xkb-switch][48]/[xkb-layout][49]
 ![image](https://cloud.githubusercontent.com/assets/5715281/22061422/347e7842-ddb8-11e6-8bdb-7abbd418653c.gif)
 
+#### [vimtex][53]
+![image](https://cloud.githubusercontent.com/assets/1798172/25799740/e77d5c2e-33ee-11e7-8660-d34ce4c5f13f.png)
+
 ## Extras
 
 vim-airline also supplies some supplementary stand-alone extensions.  In addition to the tabline extension mentioned earlier, there is also:
@@ -155,6 +158,8 @@ This plugin follows the standard runtime path structure, and as such it can be i
 | [Vundle][13] | `Plugin 'vim-airline/vim-airline'` |
 | [Plug][40] | `Plug 'vim-airline/vim-airline'` |
 | [VAM][22] | `call vam#ActivateAddons([ 'vim-airline' ])` |
+| [Dein][52] | `call dein#add('vim-airline/vim-airline')` |
+| [minpac][54] | `call minpac#add('vim-airline/vim-airline')` |
 | manual | copy all of the files into your `~/.vim` directory |
 
 # Configuration
@@ -198,7 +203,7 @@ If you are interested in becoming a maintainer (we always welcome more maintaine
 
 # License
 
-MIT License. Copyright (c) 2013-2016 Bailey Ling.
+MIT License. Copyright (c) 2013-2017 Bailey Ling & Contributors.
 
 [1]: https://github.com/Lokaltog/vim-powerline
 [2]: https://github.com/Lokaltog/powerline
@@ -212,7 +217,7 @@ MIT License. Copyright (c) 2013-2016 Bailey Ling.
 [10]: https://github.com/ctrlpvim/ctrlp.vim
 [11]: https://github.com/tpope/vim-pathogen
 [12]: https://github.com/Shougo/neobundle.vim
-[13]: https://github.com/gmarik/vundle
+[13]: https://github.com/VundleVim/Vundle.vim
 [14]: https://github.com/vim-airline/vim-airline/wiki/Screenshots
 [15]: https://github.com/techlivezheng/vim-plugin-minibufexpl
 [16]: https://github.com/sjl/gundo.vim
@@ -251,3 +256,6 @@ MIT License. Copyright (c) 2013-2016 Bailey Ling.
 [49]: https://github.com/vovkasm/input-source-switcher
 [50]: https://github.com/jreybert/vimagit
 [51]: https://github.com/Shougo/denite.nvim
+[52]: https://github.com/Shougo/dein.vim
+[53]: https://github.com/lervag/vimtex
+[54]: https://github.com/k-takata/minpac/
