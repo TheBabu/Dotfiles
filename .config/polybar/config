@@ -277,6 +277,8 @@ type = custom/script
 interval = 0.1
 
 click-left = playerctl play-pause
+click-middle = playerctl stop
+click-right = playerctl next
 label = %output%
 exec = polybar-mpris
 
