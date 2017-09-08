@@ -9,4 +9,5 @@ Some of my configuration files (dotfiles)!
 - vim
 
 # Screenshot
-![Screenshot](https://lh3.googleusercontent.com/-AL0NzMd7DPY/WYKZov29GVI/AAAAAAAANQk/qbnxyQ4VctIUqYOAecmEFCvmuMFOHtDdACL0BGAYYCw/h1080/Screenshot_2017-08-02_20-32-49.png)
+![Screenshot](https://lh3.googleusercontent.com/-M1QGmdT05Es/WbH9fSHhNPI/AAAAAAAANXI/MQUVY5PXTRoIkdgZXKK-TDhDsPnfG2qQgCL0BGAYYCw/h1080/Screenshot_2017-09-07_19-15-44.png)
+
