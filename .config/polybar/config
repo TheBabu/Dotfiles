@@ -21,8 +21,8 @@ font-1 = MaterialIcons:size=12;2
 font-2 = Termsynu:size=10:antialias=false;0
 font-3 = FontAwesome:size=12;2
 
-modules-left = powermenu mpd
-modules-right = volume backlight wireless-network wired-network battery date
+modules-left = powermenu
+modules-right = mpris volume backlight wireless-network wired-network battery date
 
 ;Bottom Bar
 [bar/bottom]
@@ -50,7 +50,7 @@ font-3 = NotoSans-Regular:size=10;1
 font-4 = MaterialIcons:size=12;1
 font-5 = Termsynu:size=10:antialias=false;2
 
-modules-left = bspwm i3
+modules-left = i3
 modules-right = cpu memory
 tray-position = right
 tray-maxsize = 25
@@ -107,76 +107,6 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-[module/bspwm]
-type = internal/bspwm
-
-ws-icon-0 = term;
-ws-icon-1 = web;
-ws-icon-2 = code;
-ws-icon-3 = music;
-ws-icon-4 = irssi;
-ws-icon-default = 
-
-format = <label-state> <label-mode>
-
-label-dimmed-underline = ${BAR.background}
-
-label-active = %icon%
-label-active-foreground = #fff
-label-active-background = #773f3f3f
-label-active-underline = #c9665e
-label-active-font = 4
-label-active-padding = 4
-
-label-occupied = %icon%
-label-occupied-foreground = #dd
-label-occupied-underline = #666
-label-occupied-font = 4
-label-occupied-padding = 4
-
-label-urgent = %icon%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
-label-urgent-font = 4
-label-urgent-padding = 4
-
-label-empty = %icon%
-label-empty-foreground = #55
-label-empty-font = 4
-label-empty-padding = 4
-
-label-monocle = 
-label-monocle-underline = ${module/bspwm.label-active-underline}
-label-monocle-background = #33ffffff
-label-monocle-padding = 2
-
-label-locked = 
-label-locked-foreground = #bd2c40
-label-locked-underline = ${module/bspwm.label-monocle-underline}
-label-locked-padding = ${module/bspwm.label-monocle-padding}
-
-label-sticky = 
-label-sticky-foreground = #fba922
-label-sticky-underline = ${module/bspwm.label-monocle-underline}
-label-sticky-padding = ${module/bspwm.label-monocle-padding}
-
-label-private = 
-label-private-foreground = #bd2c40
-label-private-underline = ${module/bspwm.label-monocle-underline}
-label-private-padding = ${module/bspwm.label-monocle-padding}
-
-[module/bspwm-tmp]
-type = internal/bspwm
-format = <label-state>
-
-label-active = 
-label-active-padding = 1
-label-occupied = 
-label-occupied-padding = 1
-label-empty = 
-label-empty-padding = 1
-
 [module/cpu]
 type = internal/cpu
 interval = 0.5
@@ -216,8 +146,6 @@ date = %m/%d/%Y
 date-alt = %%{F#fff}%A, %B %d, %Y%%{F-}
 time = %I:%M %p
 time-alt = ${self.time}
-;date =    %%{F#99} %m/%d/%Y %{F-} %%{F#fff} %I:%M %p %{F-}
-;date-alt =    %%{F#fff} %A, %B %d, %Y %{F-} %%{F#fff} %I:%M %p %{F-}
 
 [module/memory]
 type = internal/memory
@@ -237,33 +165,6 @@ bar-used-fill-font = 6
 bar-used-empty = ─
 bar-used-empty-font = 6
 bar-used-empty-foreground = #444444
-
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-random = 
-icon-repeat = 
-
-toggle-on-foreground =
-toggle-off-foreground = #55
-
-bar-progress-width = 45
-bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
-bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
-bar-progress-indicator-font = 3
-bar-progress-fill = ─
-bar-progress-fill-foreground = #bb
-bar-progress-fill-font = 3
-bar-progress-empty = ─
-bar-progress-empty-font = 3
-bar-progress-empty-foreground = #44
 
 [module/wireless-network]
 type = internal/network
@@ -338,7 +239,7 @@ menu-0-4-exec = menu-open-5
 
 menu-1-0 = Lock
 menu-1-0-foreground = #ff5555
-menu-1-0-exec = i3lock --insidevercolor=101010bf --insidewrongcolor=101010bf --insidecolor=101010bf --ringvercolor=30309bff --ringwrongcolor=dd1818ff --ringcolor=30309bff --textcolor=c7d9dbbb --linecolor=00000000 --keyhlcolor=115cddff --bshlcolor=bc0303ff -i ~/.config/polybar/XgLhsEH.png
+menu-1-0-exec = i3lock-color
 menu-1-1 = Cancel
 menu-1-1-foreground = #fba922
 menu-1-1-exec = menu-close
@@ -359,17 +260,25 @@ menu-3-1-exec = menu-close
 
 menu-4-0 = Reboot
 menu-4-0-foreground = #ff5555
-menu-4-0-exec = reboot
+menu-4-0-exec = systemctl reboot
 menu-4-1 = Cancel
 menu-4-1-foreground = #fba922
 menu-4-1-exec = menu-close
 
 menu-5-0 = Shutdown
 menu-5-0-foreground = #ff5555
-menu-5-0-exec = shutdown now
+menu-5-0-exec = systemctl poweroff
 menu-5-1 = Cancel
 menu-5-1-foreground = #fba922
 menu-5-1-exec = menu-close
+
+[module/mpris]
+type = custom/script
+interval = 0.1
+
+click-left = playerctl play-pause
+label = %output%
+exec = polybar-mpris
 
 [module/clock]
 type = internal/date
@@ -413,3 +322,4 @@ label-mode-foreground = #000
 label-mode-background = #ffb52a
 
 ; vim:ft=dosini
+
