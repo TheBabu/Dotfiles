@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ! pgrep -x oblogout >/dev/null
+then oblogout &
+else killall -q oblogout
+fi
+
