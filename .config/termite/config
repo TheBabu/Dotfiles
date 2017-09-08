@@ -5,10 +5,7 @@ geometry = 800x500
 #Molokai theme
 [colors]
 background= #282828
-#background= rgba(16, 16, 16, 0.85)
 foreground= #d0d0d0
-#foreground= #66ff66
-#highlight = #505050
 cursor = #66ff66
 color0= #101010
 color1= #960050
