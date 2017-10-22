@@ -22,7 +22,7 @@ font-2 = Termsynu:size=10:antialias=false;0
 font-3 = FontAwesome:size=12;2
 
 modules-left = powermenu
-modules-right = mpris volume backlight wireless-network wired-network battery date
+modules-right = mpris pavolume backlight wireless-network wired-network battery date
 
 ;Bottom Bar
 [bar/bottom]
@@ -53,7 +53,7 @@ font-5 = Termsynu:size=10:antialias=false;2
 modules-left = i3
 modules-right = cpu memory
 tray-position = right
-tray-maxsize = 25
+tray-maxsize = 24
 
 ;Modules
 [module/backlight]
@@ -271,6 +271,14 @@ menu-5-0-exec = systemctl poweroff
 menu-5-1 = Cancel
 menu-5-1-foreground = #fba922
 menu-5-1-exec = menu-close
+
+[module/pavolume]
+type = custom/script
+tail = true
+interval = 2
+label = %output%
+exec = polybar-pavolume --listen
+click-left = polybar-pavolume --togmute
 
 [module/mpris]
 type = custom/script
