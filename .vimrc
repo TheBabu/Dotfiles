@@ -5,6 +5,7 @@ set number
 set nocompatible
 set noshowmode
 set directory^=$HOME/.vim/.swapfiles
+set mouse=a
 syntax on
 colorscheme neodark
 hi Normal ctermbg=none
@@ -28,15 +29,20 @@ command Python :w | !clear && python "%"
 command Python2 :w | !clear && python2 "%"
 command Sh :w | !clear && sh "%"
 command Bash :w | !clear && bash "%"
-command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && g++ "%" -o ${output} && ./${output}
+command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && clang++ "%" -g -std=c++14 -Wall -o ${output} && ./${output}
 
 "Keybinding
+execute "set <M-q>=\eq"
 execute "set <M-n>=\en"
+execute "set <M-m>=\em"
 execute "set <M-j>=\ej"
-execute "set <M-f>=\ef"
 execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
+execute "set <M-d>=\ed"
+execute "set <M-f>=\ef"
+nnoremap <M-q> :x <Enter>
 nnoremap <M-n> :NERDTree <Enter>
+nnoremap <M-m> :Tabularize /=<CR>
 nnoremap <M-j> :w <Enter>
 nnoremap <M-k> :bp <Enter>
 nnoremap <M-l> :bn <Enter>
@@ -59,26 +65,17 @@ call vundle#begin()
 
 "Plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'w0rp/ale'
+Plugin 'godlygeek/tabular'
 
 call vundle#end()
 filetype plugin indent on
-
-"Syntastic
-set statusline+=%*
-set laststatus=2
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 3
-let g:syntastic_cpp_checkers=['clang_check', 'gcc']
 
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -91,4 +88,22 @@ let g:ycm_key_list_previous_completion = ['<s-tab>']
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_z = '%3p%% %l:%c'
 let g:airline_exclude_preview = 1
+
+"EasyMotion
+let g:EasyMotion_smartcase = 1
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+hi link EasyMotionTarget2First MatchParen
+hi link EasyMotionTarget2Second MatchParen
+hi link EasyMotionMoveHL Search
+hi link EasyMotionIncSearch Search
+
+"Ale
+let g:ale_linters = {'cpp': ['clang']}
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
+hi clear ALEWarningSign
 
