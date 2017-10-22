@@ -169,7 +169,9 @@ let s:beige      = ['#C7C18B', 180]
 let s:light_blue = ['#72C7D1', 80]
 let s:brown      = ['#AE8785', 138]
 let s:warmgrey   = ['#75715E', 59]
-let s:darkred    = ['#E73C50',  196]
+let s:darkred    = ['#E73C50', 196]
+let s:funcblue   = ['#RANDOM', 110]
+let s:idenblue   = ['#RANDOM', 103]
 
 if g:neodark#use_256color == 1
   let s:base1[0] = '#303030'
@@ -292,8 +294,8 @@ call s:hi('Comment',                   s:base4,      '',         'italic')
 call s:hi('Constant',                  s:red,        '',         '')
 call s:hi('String',                    s:orange,     '',         '')
 call s:hi('Character',                 s:orange,     '',         '')
-call s:hi('Identifier',                s:teal,       '',         'none')
-call s:hi('Function',                  s:blue,       '',         '')
+call s:hi('Identifier',                s:idenblue,       '',         'none')
+call s:hi('Function',                  s:funcblue,       '',         '')
 call s:hi('Statement',                 s:green,      '',         'none')
 call s:hi('Exception',                 s:red,        '',         '')
 call s:hi('PreProc',                   s:purple,     '',         '')

@@ -153,6 +153,11 @@ function! airline#extensions#load()
     call add(loaded_ext, 'netrw')
   endif
 
+  if has("terminal")
+    call airline#extensions#term#init(s:ext)
+    call add(loaded_ext, 'term')
+  endif
+
   if get(g:, 'airline#extensions#ycm#enabled', 0)
     call airline#extensions#ycm#init(s:ext)
     call add(loaded_ext, 'ycm')
@@ -298,6 +303,11 @@ function! airline#extensions#load()
   if (get(g:, 'airline#extensions#xkblayout#enabled', 1) && exists('g:XkbSwitchLib'))
     call airline#extensions#xkblayout#init(s:ext)
     call add(loaded_ext, 'xkblayout')
+  endif
+
+  if (get(g:, 'airline#extensions#keymap#enabled', 1) && has('keymap'))
+    call airline#extensions#keymap#init(s:ext)
+    call add(loaded_ext, 'keymap')
   endif
 
   if (get(g:, 'airline#extensions#windowswap#enabled', 1) && get(g:, 'loaded_windowswap', 0))
