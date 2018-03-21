@@ -58,22 +58,12 @@ tray-maxsize = 24
 ;Modules
 [module/backlight]
 type = internal/xbacklight
-format = <ramp> <bar>
+format = <ramp> <label>
+label = %percentage%%
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-font = 3
-bar-indicator-foreground = #ff
-bar-fill = ─
-bar-fill-font = 3
-bar-fill-foreground = #c9665e
-bar-empty = ─
-bar-empty-font = 3
-bar-empty-foreground = #44
 
 [module/battery]
 type = internal/battery
@@ -149,22 +139,16 @@ time-alt = ${self.time}
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = RAM
+interval = 0.5
+format = RAM<ramp-used><label> 
+label = %percentage_used%%
 
-bar-used-width = 30
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
+ramp-used-0 = %{F#ccffffff}
+ramp-used-1 = %{F#ccffffff}
+ramp-used-2 = %{F#ccffffff}
+ramp-used-3 = %{F#fba922}
+ramp-used-4 = %{F#fb5555}
+ramp-used-5 = %{F#ff5555}
 
 [module/wireless-network]
 type = internal/network
@@ -277,15 +261,17 @@ type = custom/script
 tail = true
 interval = 2
 label = %output%
-exec = polybar-pavolume --listen
+exec = polybar-pavolume --listen 2>/dev/null 
 click-left = polybar-pavolume --togmute
+scroll-up = amixer set Master 5%+
+scroll-down = amixer set Master 5%-
 
 [module/mpris]
 type = custom/script
 interval = 0.1
 
 click-left = playerctl play-pause
-click-middle = playerctl stop
+click-middle = playerctl previous
 click-right = playerctl next
 label = %output%
 exec = polybar-mpris
