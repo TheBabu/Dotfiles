@@ -1,4 +1,4 @@
-" MIT License. Copyright (c) 2013-2016 Bailey Ling.
+" MIT License. Copyright (c) 2013-2018 Bailey Ling et al.
 " vim: et ts=2 sts=2 sw=2
 
 scriptencoding utf-8
@@ -229,6 +229,13 @@ function! airline#extensions#load()
     call add(loaded_ext, 'bufferline')
   endif
 
+  if get(g:, 'airline#extensions#fugitiveline#enabled', 1)
+        \ && exists('*fugitive#head')
+        \ && index(loaded_ext, 'bufferline') == -1
+    call airline#extensions#fugitiveline#init(s:ext)
+    call add(loaded_ext, 'fugitiveline')
+  endif
+
   if (get(g:, 'airline#extensions#virtualenv#enabled', 1) && (exists(':VirtualEnvList') || isdirectory($VIRTUAL_ENV)))
     call airline#extensions#virtualenv#init(s:ext)
     call add(loaded_ext, 'virtualenv')
@@ -300,6 +307,11 @@ function! airline#extensions#load()
     call add(loaded_ext, 'capslock')
   endif
 
+  if (get(g:, 'airline#extensions#gutentags#enabled', 1) && get(g:, 'loaded_gutentags', 0))
+    call airline#extensions#gutentags#init(s:ext)
+    call add(loaded_ext, 'gutentags')
+  endif
+
   if (get(g:, 'airline#extensions#xkblayout#enabled', 1) && exists('g:XkbSwitchLib'))
     call airline#extensions#xkblayout#init(s:ext)
     call add(loaded_ext, 'xkblayout')
@@ -326,6 +338,11 @@ function! airline#extensions#load()
    call add(loaded_ext, 'vimtex')
   endif
 
+  if (get(g:, 'airline#extensions#cursormode#enabled', 0))
+    call airline#extensions#cursormode#init(s:ext)
+    call add(loaded_ext, 'cursormode')
+  endif
+
   if !get(g:, 'airline#extensions#disable_rtp_load', 0)
     " load all other extensions, which are not part of the default distribution.
     " (autoload/airline/extensions/*.vim outside of our s:script_path).
@@ -347,4 +364,3 @@ function! airline#extensions#load()
     endfor
   endif
 endfunction
-
