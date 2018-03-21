@@ -40,7 +40,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 #Child/Parent
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #Workspaces
@@ -74,21 +74,22 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86KbdBrightnessUp exec kb-light --up
 bindsym XF86KbdBrightnessDown exec kb-light --down
 bindsym XF86PowerOff exec oblogout-launch
 
 #Special Keybindings
-#bindsym $mod+Shift+d exec $HOME/.screenlayout/Display.sh
 bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 47
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+p exec --no-startup-id polybar-launch
+bindsym $mod+d exec rofi -show drun -show-icons -drun-icon-theme Numix-Circle -lines 10 -theme ~/.config/rofi/rofi-theme.rasi -font Roboto\ 20 -kb-cancel Super_L+d
 
 #Resize
-mode "Resize" {
+mode "Resize"
+{
 	bindsym j resize shrink width 10 px or 10 ppt
 	bindsym k resize grow height 10 px or 10 ppt
 	bindsym l resize shrink height 10 px or 10 ppt
