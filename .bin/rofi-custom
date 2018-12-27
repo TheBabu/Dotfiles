@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rofi -show drun -show-icons -drun-icon-theme Numix-Circle -lines 10 -theme ~/.config/rofi/rofi-theme.rasi -font Roboto\ 20 -kb-cancel Super_L+d
+

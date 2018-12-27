@@ -223,7 +223,7 @@ menu-0-4-exec = menu-open-5
 
 menu-1-0 = Lock
 menu-1-0-foreground = #ff5555
-menu-1-0-exec = i3lock-color
+menu-1-0-exec = ~/.bin/i3lock-color
 menu-1-1 = Cancel
 menu-1-1-foreground = #fba922
 menu-1-1-exec = menu-close
@@ -261,8 +261,8 @@ type = custom/script
 tail = true
 interval = 2
 label = %output%
-exec = polybar-pavolume --listen 2>/dev/null 
-click-left = polybar-pavolume --togmute
+exec = ~/.bin/polybar-pavolume --listen 2>/dev/null 
+click-left = ~/.bin/polybar-pavolume --togmute
 scroll-up = amixer set Master 5%+
 scroll-down = amixer set Master 5%-
 
@@ -274,7 +274,7 @@ click-left = playerctl play-pause
 click-middle = playerctl previous
 click-right = playerctl next
 label = %output%
-exec = polybar-mpris
+exec = ~/.bin/polybar-mpris
 
 [module/clock]
 type = internal/date

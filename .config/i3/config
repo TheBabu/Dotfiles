@@ -76,16 +76,16 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86KbdBrightnessUp exec kb-light --up
-bindsym XF86KbdBrightnessDown exec kb-light --down
-bindsym XF86PowerOff exec oblogout-launch
+bindsym XF86KbdBrightnessUp exec ~/.bin/kb-light --up
+bindsym XF86KbdBrightnessDown exec ~/.bin/kb-light --down
+bindsym XF86PowerOff exec ~/.bin/oblogout-launch
 
 #Special Keybindings
 bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 47
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Shift+p exec --no-startup-id polybar-launch
-bindsym $mod+d exec rofi -show drun -show-icons -drun-icon-theme Numix-Circle -lines 10 -theme ~/.config/rofi/rofi-theme.rasi -font Roboto\ 20 -kb-cancel Super_L+d
+bindsym $mod+Shift+p exec --no-startup-id ~/.bin/polybar-launch
+bindsym $mod+d exec ~/.bin/rofi-custom
 
 #Resize
 mode "Resize"
@@ -118,8 +118,8 @@ smart_gaps on
 smart_borders on
 
 #Scripts
-exec_always --no-startup-id polybar-launch
-exec_always --no-startup-id i3-autostart
+exec_always --no-startup-id ~/.bin/polybar-launch
+exec_always --no-startup-id ~/.bin/i3-autostart
 
 #Border Colors
 #client.focused           #30309b #30309b #30309b #30309b   #30309b

@@ -48,19 +48,16 @@ function! s:update_tabline()
     return
   endif
   let match = expand('<afile>')
-  let ignore_bufadd_pat = get(g:, 'airline#extensions#tabline#ignore_bufadd_pat',
-        \ '\c\vgundo|undotree|vimfiler|tagbar|nerd_tree')
   if pumvisible()
     return
   elseif !get(g:, 'airline#extensions#tabline#enabled', 0)
     return
   " return, if buffer matches ignore pattern or is directory (netrw)
-  elseif empty(match)
-        \ || match(match, ignore_bufadd_pat) > -1
+  elseif empty(match) || airline#util#ignore_buf(match)
         \ || isdirectory(expand("<afile>"))
     return
   endif
-  doautocmd User BufMRUChange
+  call airline#util#doautocmd('BufMRUChange')
   " sometimes, the tabline is not correctly updated see #1580
   " so force redraw here
   let &tabline = &tabline
@@ -181,7 +178,7 @@ function! airline#extensions#tabline#new_builder()
     let builder_context.left_alt_sep = get(g:, 'airline#extensions#tabline#left_alt_sep' , '|')
   endif
 
-  return airline#builder#new(builder_context)
+  return airline#extensions#tabline#builder#new(builder_context)
 endfunction
 
 function! airline#extensions#tabline#group_of_bufnr(tab_bufs, bufnr)

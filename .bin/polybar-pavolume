@@ -152,13 +152,13 @@ function output() {
     then
         echo "%{F#66}  Muted"
     else
-        if [ $curVol -lt 17 ]
+        if [ "$curVol" -lt 17 ]
 	then
 	    echo "   $curVol%"
-	elif [ $curVol -ge 17 ] && [ $curVol -lt 50 ]
+	elif [ "$curVol" -ge 17 ] && [ $curVol -lt 50 ]
 	then    
 	    echo "   $curVol%"
-	elif [ $curVol -ge 50 ]
+	elif [ "$curVol" -ge 50 ]
 	then
 	    echo "   $curVol%"
 	fi

@@ -23,13 +23,28 @@ inoremap <expr> <down> pumvisible() ? "\<c-p>" : "~\<bs>\<down>"
 inoremap <Esc>x <Esc>x
 
 "Commands
-command Copy :w | !clear && cat "%" | xclip -selection c
+function! s:Copy(...)
+	let a:arg1 = get(a:, 1, 0)
+	let a:arg2 = get(a:, 2, 0)
+	
+	if(a:arg1 && a:arg2)
+		let c = a:arg1 . "," . a:arg2 . "p "
+		execute "!clear && sed -n" c "% | xclip -selection c"
+	elseif(a:arg1)
+		let c = "1," . a:arg1 . "p "
+		execute "!clear && sed -n" c "% | xclip -selection c"
+	else
+		execute "!clear && cat % | xclip -selection c"
+	endif
+endfunction
+command -nargs=* Copy call s:Copy(<f-args>)
 command Python :w | !clear && python "%"
 command Python2 :w | !clear && python2 "%"
 command Sh :w | !clear && sh "%"
 command Bash :w | !clear && bash "%"
 command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && clang++ "%" -g -std=c++14 -Wall -o ${output} && ./${output}
 command Rust :w | !clear && cargo run -q
+command RustTest :w | !clear && cargo test
 
 "Keybinding
 execute "set <M-q>=\eq"
@@ -39,8 +54,8 @@ execute "set <M-,>=\e,"
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
-execute "set <M-d>=\ed"
 execute "set <M-f>=\ef"
+execute "set <M-t>=\et"
 nnoremap <M-q> :qa <Enter>
 nnoremap <M-n> :NERDTree <Enter>
 nnoremap <M-m> :Tabularize /=<CR>
@@ -52,6 +67,7 @@ autocmd FileType python nnoremap <M-f> :Python <Enter>
 autocmd FileType sh nnoremap <M-f> :Sh <Enter>
 autocmd FileType cpp nnoremap <M-f> :Cpp <Enter>
 autocmd FileType rust nnoremap <M-f> :Rust <Enter>
+autocmd FileType rust nnoremap <M-t> :RustTest <Enter>
 
 "Tabs
 set listchars=tab:➡\ 
@@ -109,7 +125,7 @@ let g:ale_echo_msg_error_str           = 'Error'
 let g:ale_echo_msg_warning_str         = 'Warning'
 let g:ale_echo_msg_format              = '%severity%: %s [%linter%]'
 let g:ale_rust_cargo_check_all_targets = 0
-let g:ale_rust_rls_toolchain           = 'nightly-2017-10-24-x86_64-unknown-linux-gnu'
+let g:ale_rust_rls_toolchain           = 'stable-x86_64-unknown-linux-gnu'
 hi clear ALEWarningSign
 
 "DelimitMate

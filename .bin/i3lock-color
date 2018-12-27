@@ -1,0 +1,4 @@
+#!/bin/bash
+
+i3lock --insidevercolor=101010bf --insidewrongcolor=101010bf --insidecolor=101010bf --ringvercolor=30309bff --ringwrongcolor=dd1818ff --ringcolor=30309bff --verifcolor=c7d9dbbb --wrongcolor=c7d9dbbb --linecolor=00000000 --keyhlcolor=115cddff --bshlcolor=bc0303ff --separatorcolor=ffffff00 --radius=300 -e -i ~/Pictures/Firewatch_Wallpaper_i3lock.png
+

@@ -33,7 +33,3 @@ if ! pgrep -x pasystray -a >/dev/null
 then pasystray -a &
 fi
 
-if ! pgrep -x synapse -s >/dev/null
-then synapse -s &
-fi
-
