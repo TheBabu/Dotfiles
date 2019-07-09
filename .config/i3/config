@@ -81,10 +81,10 @@ bindsym XF86KbdBrightnessDown exec ~/.bin/kb-light --down
 bindsym XF86PowerOff exec ~/.bin/oblogout-launch
 
 #Special Keybindings
-bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 47
+bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 55
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Shift+p exec --no-startup-id ~/.bin/polybar-launch
+bindsym $mod+Shift+p exec --no-startup-id polybar-msg cmd restart
 bindsym $mod+d exec ~/.bin/rofi-custom
 
 #Resize

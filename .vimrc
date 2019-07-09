@@ -13,25 +13,32 @@ hi Normal ctermbg=none
 sign define transparent_sign
 augroup SignColFixAu
 	au!
-	au BufReadPost *.c,*.cc,*.h,*.cpp,*.hh,*.py,*.js,*.php,*.rs exe "sign place 1111 name=transparent_sign line=1 file=".@%
+	au BufReadPost *.c,*.cc,*.h,*.cpp,*.hh,*.hpp,*.py,*.js,*.php,*.rs exe "sign place 1111 name=transparent_sign line=1 file=".@%
 augroup end
-nnoremap o ox<BS>
-nnoremap O Ox<BS>
+inoremap <cr> <space><bs><cr>
 inoremap <esc> ~<bs><esc>
 inoremap <expr> <up> pumvisible() ? "\<c-p>" : "~\<bs>\<up>"
 inoremap <expr> <down> pumvisible() ? "\<c-p>" : "~\<bs>\<down>"
 inoremap <Esc>x <Esc>x
 
+"Tabs
+set listchars=tab:➡\ 
+set list
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
 "Commands
 function! s:Copy(...)
-	let a:arg1 = get(a:, 1, 0)
-	let a:arg2 = get(a:, 2, 0)
+	let arg1 = get(a:, 1, 0)
+	let arg2 = get(a:, 2, 0)
 	
-	if(a:arg1 && a:arg2)
-		let c = a:arg1 . "," . a:arg2 . "p "
+	if(arg1 && arg2)
+		let c = arg1 . "," . arg2 . "p "
 		execute "!clear && sed -n" c "% | xclip -selection c"
-	elseif(a:arg1)
-		let c = "1," . a:arg1 . "p "
+	elseif(arg1)
+		let c = "1," . arg1 . "p "
 		execute "!clear && sed -n" c "% | xclip -selection c"
 	else
 		execute "!clear && cat % | xclip -selection c"
@@ -69,15 +76,6 @@ autocmd FileType cpp nnoremap <M-f> :Cpp <Enter>
 autocmd FileType rust nnoremap <M-f> :Rust <Enter>
 autocmd FileType rust nnoremap <M-t> :RustTest <Enter>
 
-"Tabs
-set listchars=tab:➡\ 
-set list
-set autoindent
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-autocmd FileType python setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
-
 "Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -91,7 +89,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
-Plugin 'raimondi/delimitmate'
+Plugin 'LukeLike/auto-pairs'
+Plugin 'ananagame/vimsence'
 
 call vundle#end()
 filetype plugin indent on
@@ -127,8 +126,4 @@ let g:ale_echo_msg_format              = '%severity%: %s [%linter%]'
 let g:ale_rust_cargo_check_all_targets = 0
 let g:ale_rust_rls_toolchain           = 'stable-x86_64-unknown-linux-gnu'
 hi clear ALEWarningSign
-
-"DelimitMate
-let g:delimitMate_autoclose = 1
-let g:delimitMate_expand_cr = 1
 

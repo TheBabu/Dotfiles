@@ -1,6 +1,8 @@
 eclipseaction toggle org.eclipse.debug.ui.commands.ToggleBreakpoint
 eclipseaction run org.eclipse.debug.ui.commands.RunLast
 
+nnoremap o ox<BS>
+nnoremap O Ox<BS>
 nnoremap <M-j> :w <Enter>
 nnoremap <M-k> :bp <Enter>
 nnoremap <M-l> :bn <Enter>
