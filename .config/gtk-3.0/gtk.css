@@ -1,0 +1,4 @@
+.thunar > grid > toolbar * {
+	-gtk-icon-style: regular;
+	-gtk-icon-transform: scale(1.0);
+}
