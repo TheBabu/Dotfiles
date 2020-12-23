@@ -64,7 +64,7 @@ POWERLEVEL9K_TIME_FOREGROUND="238"
 
 #Aliases/Cat
 alias tb="ncat termbin.com 9999"
-cat /home/ariq/.Hacksaurus.txt
+cat ~/.bin/Hacksaurus.txt
 
 #Extra
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -73,7 +73,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 #Syntax Highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
@@ -106,7 +106,7 @@ ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=fg=237,bold,bg=74
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=240
 
 #Background Jobs Function
-set_default POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE true
+POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
 prompt_background_jobs() {
 local background_jobs_number=${$(jobs -l | wc -l)// /}
 local wrong_lines=`jobs -l | awk '/pwd now/{ count++ } END {print count}'`

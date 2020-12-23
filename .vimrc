@@ -49,29 +49,33 @@ command Python :w | !clear && python "%"
 command Python2 :w | !clear && python2 "%"
 command Sh :w | !clear && sh "%"
 command Bash :w | !clear && bash "%"
-command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && clang++ "%" -g -std=c++14 -Wall -o ${output} && ./${output}
+command C :w | !clear && output=$(echo "%" | sed 's/\.c$//g') && clang "%" -g -Wall -o ${output} && ./${output}
+command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && clang++ "%" -g -std=c++20 -Wall -o ${output} && ./${output}
 command Rust :w | !clear && cargo run -q
 command RustTest :w | !clear && cargo test
 
 "Keybinding
 execute "set <M-q>=\eq"
-execute "set <M-n>=\en"
-execute "set <M-m>=\em"
-execute "set <M-,>=\e,"
+execute "set <M-a>=\ea"
+execute "set <M-s>=\es"
+execute "set <M-d>=\ed"
+execute "set <M-f>=\ef"
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
-execute "set <M-f>=\ef"
 execute "set <M-t>=\et"
+execute "set <M-c>=\ec"
 nnoremap <M-q> :qa <Enter>
-nnoremap <M-n> :NERDTree <Enter>
-nnoremap <M-m> :Tabularize /=<CR>
-nnoremap <M-,> :Tabularize /=><CR>
+nnoremap <M-a> :Tabularize /^[^=>]*\zs=><CR>
+nnoremap <M-s> :Tabularize /^[^=]*\zs=<CR>
+nnoremap <M-d> :NERDTree <Enter>
 nnoremap <M-j> :w <Enter>
 nnoremap <M-k> :bp <Enter>
 nnoremap <M-l> :bn <Enter>
+nnoremap <M-c> :Copy <Enter>
 autocmd FileType python nnoremap <M-f> :Python <Enter>
 autocmd FileType sh nnoremap <M-f> :Sh <Enter>
+autocmd FileType c nnoremap <M-f> :C <Enter>
 autocmd FileType cpp nnoremap <M-f> :Cpp <Enter>
 autocmd FileType rust nnoremap <M-f> :Rust <Enter>
 autocmd FileType rust nnoremap <M-t> :RustTest <Enter>
@@ -91,13 +95,14 @@ Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'LukeLike/auto-pairs'
 Plugin 'ananagame/vimsence'
+Plugin 'preservim/nerdcommenter'
 
 call vundle#end()
 filetype plugin indent on
 
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf                     = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf                     = '~/.vim/ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui                       = 0
 let g:ycm_key_list_select_completion                = ['<tab>']
 let g:ycm_key_list_previous_completion              = ['<s-tab>']

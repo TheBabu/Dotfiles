@@ -3,10 +3,19 @@
 while test $# -gt 0; do
 	case "$1" in
 		-m)
-			( echo "---------- NORMAL PACKAGES ----------"; yay -Qqen; echo "---------- AUR PACKAGES ----------"; yay -Qqem ) | less
+			( echo "############### yay-sip -m ###############"; echo "---------- NORMAL PACKAGES ----------"; yay -Qqen; echo "---------- AUR PACKAGES ----------"; yay -Qqem ) | less
 			exit 0;;
-		--more)
-			( echo "---------- NORMAL PACKAGES ----------"; yay -Qqen; echo "---------- AUR PACKAGES ----------"; yay -Qqem ) | less
+		-e)
+			( echo "############### yay-sip -e ###############"; echo "---------- NORMAL PACKAGES ----------"; comm -23 <(pacman -Qqten | sort) <(pacman -Qqg -g base-devel | sort | uniq); echo "---------- AUR PACKAGES ----------"; comm -23 <(pacman -Qqtem | sort) <(pacman -Qqg -g base-devel | sort | uniq) ) | less
+			exit 0;;
+		-me)
+			( echo "############### yay-sip -me ###############"; echo "---------- NORMAL PACKAGES ----------"; comm -23 <(pacman -Qqen | sort) <(pacman -Qqg -g base-devel | sort | uniq); echo "---------- AUR PACKAGES ----------"; comm -23 <(pacman -Qqem | sort) <(pacman -Qqg -g base-devel | sort | uniq) ) | less
+			exit 0;;
+		-a)
+			( ~/.bin/yay-sip; echo ""; ~/.bin/yay-sip -m; echo ""; ~/.bin/yay-sip -e; echo ""; ~/.bin/yay-sip -me; ) | less
+			exit 0;;
+		-as)
+			( ~/.bin/yay-sip; echo ""; ~/.bin/yay-sip -m; echo ""; ~/.bin/yay-sip -e; echo ""; ~/.bin/yay-sip -me; ) > ./Packages
 			exit 0;;
 		*)
 			break;;
@@ -14,5 +23,5 @@ while test $# -gt 0; do
 done
 
 #No Flags
-( echo "---------- NORMAL PACKAGES ----------"; yay -Qqten; echo "---------- AUR PACKAGES ----------"; yay -Qqtem ) | less
+( echo -e "############### yay-sip ###############"; echo "---------- NORMAL PACKAGES ----------"; yay -Qqten; echo "---------- AUR PACKAGES ----------"; yay -Qqtem ) | less
 

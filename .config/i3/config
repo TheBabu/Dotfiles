@@ -86,6 +86,10 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+p exec --no-startup-id polybar-msg cmd restart
 bindsym $mod+d exec ~/.bin/rofi-custom
+bindsym $mod+minus move scratchpad
+bindsym $mod+plus scratchpad show
+bindsym $mod+x exec --no-startup-id autorandr -c
+bindsym $mod+a exec --no-startup-id xfce4-screenshooter --region -c
 
 #Resize
 mode "Resize"
@@ -106,8 +110,8 @@ bindsym $mod+r mode "Resize"
 
 #Special Window Settings
 for_window [class="Blueman"] floating enable
-for_window [class="vokoscreen"] floating enable
 for_window [class="Oblogout"] floating enable
+for_window [class="Qalculate"] floating enable
 assign [class="discord"] 10
 force_xinerama yes
 focus_follows_mouse no
