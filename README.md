@@ -1,4 +1,4 @@
-# Config
+# Dotfiles
 Some of my configuration files (dotfiles)!
 
 # Software
