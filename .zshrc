@@ -1,5 +1,14 @@
+#Hacksaurus
+cat ~/.bin/Hacksaurus.txt
+
+#Instant Prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #Setup
 ZSH=/usr/share/oh-my-zsh/
+ZSH_CUSTOM=/usr/share/zsh/
 DISABLE_AUTO_UPDATE="true"
 
 #Powerlevel9k
@@ -48,6 +57,7 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="004"
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="000"
 
 #Background Jobs
+POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
 POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
 POWERLEVEL9K_BACKGROUND_JOBS_ICON="\uF013"
 POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="008"
@@ -62,9 +72,8 @@ POWERLEVEL9K_TIME_ICON=""
 POWERLEVEL9K_TIME_BACKGROUND="246"
 POWERLEVEL9K_TIME_FOREGROUND="238"
 
-#Aliases/Cat
+#Aliases
 alias tb="ncat termbin.com 9999"
-cat ~/.bin/Hacksaurus.txt
 
 #Extra
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -104,21 +113,4 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=250
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=250
 ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=fg=237,bold,bg=74 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=240
-
-#Background Jobs Function
-POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
-prompt_background_jobs() {
-local background_jobs_number=${$(jobs -l | wc -l)// /}
-local wrong_lines=`jobs -l | awk '/pwd now/{ count++ } END {print count}'`
-if [[ wrong_lines -gt 0 ]]; then
-     background_jobs_number=$(( $background_jobs_number - $wrong_lines ))
-  fi
-  if [[ background_jobs_number -gt 0 ]]; then
-    local background_jobs_number_print="1"
-    if [[ "$POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE" == "true" ]] && [[ "$background_jobs_number" -gt 1 ]]; then
-      background_jobs_number_print="$background_jobs_number"
-    fi
-    "$1_prompt_segment" "$0" "$2" "$DEFAULT_COLOR" "cyan" "$background_jobs_number_print" 'BACKGROUND_JOBS_ICON'
-  fi
-}
 
