@@ -20,6 +20,7 @@ inputbar {
 prompt {
   padding: 8px;
   border: 0 1px 0 0;
+  enabled: false;
 }
 
 #textbox {
@@ -34,6 +35,7 @@ listview {
   cycle: false;
   margin: 0 0 -1px 0;
   scrollbar: false;
+  lines: 10;
 }
 
 element {
@@ -46,6 +48,16 @@ element selected {
 }
 
 element-icon {
-    size: 2.4ch;
+  size: 2.4ch;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  margin: 0 0 0 5px;
+}
+
+element-icon {
+  background-color: inherit;
 }
 
