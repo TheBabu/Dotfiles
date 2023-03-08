@@ -1,0 +1,55 @@
+[global]
+monitor = 0
+follow = mouse
+indicate_hidden = yes
+shrink = no
+width = 500
+height = 300
+separator_height = 0
+padding = 32
+horizontal_padding = 16
+frame_width = 1
+sort = no
+idle_threshold = 120
+font = NotoSans-Regular 10
+line_height = 4
+markup = full
+format = %s\n%b
+alignment = left
+show_age_threshold = 60
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = yes
+show_indicators = no
+icon_position = left
+sticky_history = yes
+history_length = 20
+browser = /usr/bin/firefox -new-tab
+always_run_script = true
+title = Dunst
+class = Dunst
+mouse_left_click = close_current
+mouse_middle_click = close_all
+mouse_right_click = do_action, close_current
+#icon_theme = Numix-Circle, Numix-Circle-Light, Numix-Light, Numix
+#enable_recursive_icon_lookup = true
+
+[urgency_low]
+timeout = 4
+background = "#141c21"
+foreground = "#93a1a1"
+frame_color = "#8bc34a"
+
+[urgency_normal]
+timeout = 8
+background = "#141c21"
+foreground = "#93a1a1"
+frame_color = "#ba68c8"
+
+[urgency_critical]
+timeout = 0
+background = "#141c21"
+foreground = "#93a1a1"
+frame_color = "#ff7043"
+
