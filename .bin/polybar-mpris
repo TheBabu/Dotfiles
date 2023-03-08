@@ -10,9 +10,9 @@ if [ "$player_status" = "Playing" ]; then
 	fi
 elif [ "$player_status" = "Paused" ]; then
 	if [ "$(playerctl metadata artist)" = "" ]; then
-		echo "%{F#66}   $(playerctl metadata title)"
+		echo "%{F#666}   $(playerctl metadata title)"
 	else
-		echo "%{F#66}   $(playerctl metadata artist)  -  $(playerctl metadata title)"
+		echo "%{F#666}   $(playerctl metadata artist)  -  $(playerctl metadata title)"
 	fi
 else
 	echo ""

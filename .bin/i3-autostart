@@ -37,7 +37,11 @@ if ! pgrep -x i3-battery-popup -n -L 30 -t 1m >/dev/null
 then i3-battery-popup -n -L 30 -t 1m &
 fi
 
-if ! pgrep -x /usr/lib/xfce4/notifyd/xfce4-notifyd >/dev/null
-then  /usr/lib/xfce4/notifyd/xfce4-notifyd &
-fi
+#if ! pgrep -x /usr/lib/xfce4/notifyd/xfce4-notifyd >/dev/null
+#then  /usr/lib/xfce4/notifyd/xfce4-notifyd &
+#fi
+
+#if ! pgrep -x dunst >/dev/null
+#then dunst &
+#fi
 

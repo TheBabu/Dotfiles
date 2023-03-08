@@ -1,0 +1,14 @@
+#!/bin/bash
+
+gpu_util=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)
+
+if [[ $gpu_util == *"Failed"* ]]; then
+	echo "GPU   ??%"
+elif [[ $gpu_util -lt 50 ]]; then
+	echo "GPU   %{F#ccffffff}${gpu_util}%"
+elif [[ $gpu_util -ge 50 ]] && [[ $gpu_util -lt 75 ]]; then
+	echo "GPU   %{F#fba922}${gpu_util}%"
+else
+	echo "GPU   %{F#ff5555}${gpu_util}%"
+fi
+
