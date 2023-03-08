@@ -2,3 +2,9 @@
 	-gtk-icon-style: regular;
 	-gtk-icon-transform: scale(1.0);
 }
+
+window > image {
+	-gtk-icon-style: regular;
+	-gtk-icon-transform: scale(1.0);
+}
+
