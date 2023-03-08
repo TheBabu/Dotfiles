@@ -1,0 +1,77 @@
+{
+	"configurations": {
+		"GDB (C)": {
+			"adapter": "vscode-cpptools",
+			"variables": {
+				"BUILDME": {
+					"shell": "clang ${file} -g -Wall -o ${fileDirname}/${fileBasenameNoExtension}"
+				}
+			},
+			"configuration": {
+				"request": "launch",
+				"program": "${fileDirname}/${fileBasenameNoExtension}",
+				"stopAtEntry": true,
+				"MIMode": "gdb"
+			}
+		},
+		"CodeLLDB (C)": {
+			"adapter": "CodeLLDB",
+			"variables": {
+				"BUILDME": {
+					"shell": "clang ${file} -g -Wall -o ${fileDirname}/${fileBasenameNoExtension}"
+				}
+			},
+			"configuration": {
+				"request": "launch",
+				"program": "${fileDirname}/${fileBasenameNoExtension}"
+			}
+		},
+		"GDB (C++)": {
+			"adapter": "vscode-cpptools",
+			"variables": {
+				"BUILDME": {
+					"shell": "clang++ ${file} -g -std=c++20 -Wall -o ${fileDirname}/${fileBasenameNoExtension}"
+				}
+			},
+			"configuration": {
+				"request": "launch",
+				"program": "${fileDirname}/${fileBasenameNoExtension}",
+				"stopAtEntry": true,
+				"MIMode": "gdb"
+			}
+		},
+		"CodeLLDB (C++)": {
+			"adapter": "CodeLLDB",
+			"variables": {
+				"BUILDME": {
+					"shell": "clang++ ${file} -g -std=c++20 -Wall -o ${fileDirname}/${fileBasenameNoExtension}"
+				}
+			},
+			"configuration": {
+				"request": "launch",
+				"program": "${fileDirname}/${fileBasenameNoExtension}"
+			}
+		},
+		"Python": {
+			"adapter": "debugpy",
+			"configuration": {
+				"request": "launch",
+				"program": "${file}",
+				"args": []
+			}
+		},
+		"CodeLLDB (Rust)": {
+			"adapter": "CodeLLDB",
+			"variables": {
+				"BUILDME": {
+					"shell": "cargo build --quiet"
+				}
+			},
+			"configuration": {
+				"request": "launch",
+				"program": "target/debug/${relativeFileDirName}"
+			}
+		}
+	}
+}
+
