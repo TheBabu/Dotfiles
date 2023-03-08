@@ -53,6 +53,7 @@ command C :w | !clear && output=$(echo "%" | sed 's/\.c$//g') && clang "%" -g -W
 command Cpp :w | !clear && output=$(echo "%" | sed 's/\.cpp$//g') && clang++ "%" -g -std=c++20 -Wall -o ${output} && ./${output}
 command Rust :w | !clear && cargo run -q
 command RustTest :w | !clear && cargo test
+command SudoSave :w !sudo tee % >/dev/null
 
 "Keybinding
 execute "set <M-q>=\eq"
@@ -68,7 +69,7 @@ execute "set <M-c>=\ec"
 nnoremap <M-q> :qa <Enter>
 nnoremap <M-a> :Tabularize /^[^=>]*\zs=><CR>
 nnoremap <M-s> :Tabularize /^[^=]*\zs=<CR>
-nnoremap <M-d> :NERDTree <Enter>
+nnoremap <M-d> :NERDTreeToggle <Enter>
 nnoremap <M-j> :w <Enter>
 nnoremap <M-k> :bp <Enter>
 nnoremap <M-l> :bn <Enter>
@@ -96,6 +97,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'LukeLike/auto-pairs'
 Plugin 'ananagame/vimsence'
 Plugin 'preservim/nerdcommenter'
+Plugin 'puremourning/vimspector'
+Plugin 'MattesGroeger/vim-bookmarks'
 
 call vundle#end()
 filetype plugin indent on
@@ -104,8 +107,8 @@ filetype plugin indent on
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf                     = '~/.vim/ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui                       = 0
-let g:ycm_key_list_select_completion                = ['<tab>']
-let g:ycm_key_list_previous_completion              = ['<s-tab>']
+let g:ycm_key_list_select_completion                = ['<tab>', '<down>']
+let g:ycm_key_list_previous_completion              = ['<s-tab>', '<up>']
 
 "Airline
 let g:airline#extensions#whitespace#enabled = 0
@@ -131,4 +134,7 @@ let g:ale_echo_msg_format              = '%severity%: %s [%linter%]'
 let g:ale_rust_cargo_check_all_targets = 0
 let g:ale_rust_rls_toolchain           = 'stable-x86_64-unknown-linux-gnu'
 hi clear ALEWarningSign
+
+"Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
 
