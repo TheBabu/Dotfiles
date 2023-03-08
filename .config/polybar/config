@@ -1,6 +1,6 @@
 ;Top Bar
 [bar/top]
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:DP-0}
 monitor-fallback = eDP1
 
 width = 100%
@@ -22,13 +22,13 @@ font-2 = Termsynu:size=10:antialias=false;0
 font-3 = FontAwesome:size=12;2
 
 modules-left = powermenu
-modules-right = mpris pavolume backlight wireless-network wired-network battery date
+modules-right = mpris pulseaudio backlight wireless-network wired-network battery date
 
 enable-ipc = true
 
 ;Bottom Bar
 [bar/bottom]
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:DP-0}
 monitor-fallback = eDP1
 bottom = true
 width = 100%
@@ -53,7 +53,7 @@ font-4 = MaterialIcons:size=12;1
 font-5 = Termsynu:size=10:antialias=false;2
 
 modules-left = i3
-modules-right = cpu memory
+modules-right = cpu gpu memory
 tray-position = right
 tray-maxsize = 24
 
@@ -132,10 +132,15 @@ ramp-coreload-7 = █
 ramp-coreload-7-font = 2
 ramp-coreload-7-foreground = #ff5555
 
+[module/gpu]
+type = custom/script
+exec = ~/.bin/polybar-gpu
+interval = 0.5
+
 [module/date]
 type = internal/date
 format-prefix = "   "
-label = %{F#99}%date%%{F-}   %{F#fff}%time%%{F-}
+label = %{F#999}%date%%{F-}   %{F#fff}%time%%{F-}
 date = %m/%d/%Y
 date-alt = %%{F#fff}%A, %B %d, %Y%%{F-}
 time = %I:%M %p
@@ -151,12 +156,12 @@ ramp-used-0 = %{F#ccffffff}
 ramp-used-1 = %{F#ccffffff}
 ramp-used-2 = %{F#ccffffff}
 ramp-used-3 = %{F#fba922}
-ramp-used-4 = %{F#fb5555}
+ramp-used-4 = %{F#ff5555}
 ramp-used-5 = %{F#ff5555}
 
 [module/wireless-network]
 type = internal/network
-interface = wlp2s0
+interface = wlo1
 interval = 3.0
 ping-interval = 10
 
@@ -179,26 +184,11 @@ animation-packetloss-framerate = 500
 
 [module/wired-network]
 type = internal/network
-interface = enp0s20f0u2
+interface = enp3s0
 interval = 3.0
 
 label-connected =    %{F#999}%local_ip%%{F-}
 label-disconnected-foreground = #66
-
-[module/volume]
-type = internal/volume
-;speaker-mixer = Master
-;headphone-mixer = Master
-;headphone-id = 9
-
-format-volume = <ramp-volume> <label-volume>
-label-muted =   Muted
-label-muted-foreground = #66
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
 
 [module/powermenu]
 type = custom/menu
@@ -218,12 +208,15 @@ menu-0-1-exec = menu-open-2
 menu-0-2 = Suspend
 menu-0-2-foreground = #fba922
 menu-0-2-exec = menu-open-3
-menu-0-3 = Reboot
+menu-0-3 = Hibernate
 menu-0-3-foreground = #fba922
 menu-0-3-exec = menu-open-4
-menu-0-4 = Shutdown
+menu-0-4 = Reboot
 menu-0-4-foreground = #fba922
 menu-0-4-exec = menu-open-5
+menu-0-5 = Shutdown
+menu-0-5-foreground = #fba922
+menu-0-5-exec = menu-open-6
 
 menu-1-0 = Lock
 menu-1-0-foreground = #ff5555
@@ -246,29 +239,42 @@ menu-3-1 = Cancel
 menu-3-1-foreground = #fba922
 menu-3-1-exec = menu-close
 
-menu-4-0 = Reboot
+menu-4-0 = Hibernate
 menu-4-0-foreground = #ff5555
-menu-4-0-exec = systemctl reboot
+menu-4-0-exec = ~/.bin/i3lock-color && sleep 0.25 && systemctl hibernate
 menu-4-1 = Cancel
 menu-4-1-foreground = #fba922
 menu-4-1-exec = menu-close
 
-menu-5-0 = Shutdown
+menu-5-0 = Reboot
 menu-5-0-foreground = #ff5555
-menu-5-0-exec = systemctl poweroff
+menu-5-0-exec = systemctl reboot
 menu-5-1 = Cancel
 menu-5-1-foreground = #fba922
 menu-5-1-exec = menu-close
 
-[module/pavolume]
-type = custom/script
-tail = true
-interval = 2
-label = %output%
-exec = ~/.bin/polybar-pavolume --listen 2>/dev/null 
-click-left = ~/.bin/polybar-pavolume --togmute
-scroll-up = amixer set Master 5%+
-scroll-down = amixer set Master 5%-
+menu-6-0 = Shutdown
+menu-6-0-foreground = #ff5555
+menu-6-0-exec = systemctl poweroff
+menu-6-1 = Cancel
+menu-6-1-foreground = #fba922
+menu-6-1-exec = menu-close
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+
+use-ui-max = false
+
+label-muted = %{F#666}  Muted
+label-muted-foreground = #666
+
+ramp-volume-0 =  
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
 
 [module/mpris]
 type = custom/script
