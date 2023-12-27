@@ -92,6 +92,7 @@ bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
 #bindsym $mod+x exec --no-startup-id autorandr -c
 bindsym $mod+a exec --no-startup-id xfce4-screenshooter --region -c
+bindsym Print exec --no-startup-id xfce4-screenshooter --region -c
 
 #Resize
 mode "Resize"

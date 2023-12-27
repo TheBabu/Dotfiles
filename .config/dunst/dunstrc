@@ -51,6 +51,13 @@ frame_color = "#dd1818"
 
 [volume]
 appname = pasystray
-format = %n%%
+summary = "sink Built-in Audio Analog Stereo*"
+format = Volume: %n%%
+timeout = 4
+
+[mic_volume]
+appname = pasystray
+summary = "source Built-in Audio Analog Stereo*"
+format = Microphone Volume: %n%%
 timeout = 4
 
