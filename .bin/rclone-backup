@@ -7,7 +7,7 @@ for file in ~/* \
 			~/.config/polybar \
 			~/.config/qalculate \
 			~/.config/rofi \
-			~/.config/termite \
+			~/.config/alacritty \
 			~/.config/Thunar \
 			~/.config/rclone \
 			~/.config/user-dirs.dirs \
@@ -31,7 +31,7 @@ for file in ~/* \
 			/etc/lightdm/lightdm-gtk-greeter.conf \
 			/etc/lightdm/Sketch_PFP_Discord.png \
 			/etc/lightdm/Wallpaper.png \
-			/usr/share/themes/Arc-Custom; do
+			/usr/share/themes/Arc-Undead-Custom; do
 	echo "############### Backup ${file} ###############"
 	rclone sync -l -v --transfers 30 ${file} google-drive:Backup${file} --backup-dir google-drive:Backup/OLD${file}
 done

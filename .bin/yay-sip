@@ -15,7 +15,7 @@ while test $# -gt 0; do
 			( ~/.bin/yay-sip; echo ""; ~/.bin/yay-sip -m; echo ""; ~/.bin/yay-sip -e; echo ""; ~/.bin/yay-sip -me; ) | less
 			exit 0;;
 		-as)
-			( ~/.bin/yay-sip; echo ""; ~/.bin/yay-sip -m; echo ""; ~/.bin/yay-sip -e; echo ""; ~/.bin/yay-sip -me; ) > ./Packages
+			( ~/.bin/yay-sip; echo ""; ~/.bin/yay-sip -m; echo ""; ~/.bin/yay-sip -e; echo ""; ~/.bin/yay-sip -me; ) > ~/.bin/Packages
 			exit 0;;
 		*)
 			break;;
