@@ -13,5 +13,4 @@ Some of my configuration files (dotfiles)!
 - powerlevel9k (https://github.com/chrisduerr/dotfiles/blob/master/files/zsh/powerlevel9k.zsh)
 
 # Screenshot
-![Screenshot](https://i.ibb.co/fDf6sJp/Screenshot-2019-07-21-12-29-42.png)
-
+![Screenshot_2024-01-01_09-10-45](https://github.com/TheBabu/Dotfiles/assets/24832107/be8465ee-44e3-4b27-8786-ed5e845ea5fe)
