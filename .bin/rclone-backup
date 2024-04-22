@@ -8,6 +8,7 @@ for file in ~/* \
 			~/.config/qalculate \
 			~/.config/rofi \
 			~/.config/alacritty \
+            ~/.config/nvim \
 			~/.config/Thunar \
 			~/.config/rclone \
 			~/.config/user-dirs.dirs \

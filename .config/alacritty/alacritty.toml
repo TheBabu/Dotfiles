@@ -1,0 +1,40 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+#Molokai Theme
+[colors.bright]
+black = "#303030"
+blue = "#5f5fee"
+cyan = "#4eb4fa"
+green = "#80ff00"
+magenta = "#bb88dd"
+red = "#ff0090"
+white = "#d0d0d0"
+yellow = "#ffba68"
+
+[colors.cursor]
+cursor = "#66ff66"
+
+[colors.normal]
+black = "#101010"
+blue = "#30309b"
+cyan = "#3579a8"
+green = "#66aa11"
+magenta = "#7e40a5"
+red = "#960050"
+white = "#9999aa"
+yellow = "#c47f2c"
+
+[colors.primary]
+background = "#282828"
+foreground = "#d0d0d0"
+
+[cursor]
+thickness = 0
+
+[font]
+size = 12
+
+[font.normal]
+family = "Cousine"
+

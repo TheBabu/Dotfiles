@@ -9,43 +9,45 @@ base
 bison
 blueman
 bluez-utils
+chrpath
 clang
 cmake
 cups
+debugedit
 discord
 eog
 flex
 grub-customizer
-gtk3-demos
 htop
-inkscape
 intel-ucode
 lightdm-gtk-greeter-settings
 lxappearance
 man-db
 mousepad
 neofetch
+neovim
 nethack
 network-manager-applet
 nmap
 nvidia
 obs-studio
-optipng
 pasystray
 patch
 pkgconf
 playerctl
 polkit-gnome
 polybar
+python-ply
 python-pywal
-python-scikit-learn
 python-torchvision-cuda
-python-virtualenv
 qalculate-gtk
 rclone
-rustup
+ripgrep
+rust-analyzer
+sbctl
 system-config-printer
 trash-cli
+tree
 ttf-roboto
 valgrind
 vlc
@@ -60,7 +62,6 @@ xorg-xinit
 xorg-xinput
 zsh-autosuggestions
 zsh-syntax-highlighting
-zsh-theme-powerlevel10k
 ---------- AUR PACKAGES ----------
 bash-pipes
 braincurses
@@ -69,7 +70,7 @@ deadbeef-mpris2-plugin
 downgrade
 google-chrome
 jupyterlab-lsp
-kalu-kde
+kalu
 mongodb-bin
 nodejs-nodemon
 numix-circle-icon-theme-git
@@ -85,6 +86,7 @@ ttf-material-icons-git
 ttf-unifont
 yay
 youtube-dl
+zsh-theme-powerlevel10k
 
 ############### yay-sip -m ###############
 ---------- NORMAL PACKAGES ----------
@@ -101,9 +103,11 @@ bison
 blueman
 bluez-utils
 ca-certificates-mozilla
+chrpath
 clang
 cmake
 cups
+debugedit
 discord
 dunst
 efibootmgr
@@ -116,14 +120,12 @@ findutils
 flex
 gawk
 gcc
-gdb
 gettext
 git
 grep
 groff
 grub
 grub-customizer
-gtk3-demos
 gvfs
 gvfs-mtp
 gvfs-smb
@@ -131,7 +133,6 @@ gzip
 htop
 i3-wm
 imlib2
-inkscape
 intel-ucode
 jupyterlab
 libid3tag
@@ -150,6 +151,7 @@ mousepad
 mpg123
 mypy
 neofetch
+neovim
 nethack
 network-manager-applet
 nmap
@@ -164,10 +166,8 @@ nvidia-settings
 obs-studio
 openexr
 openssh
-optipng
 opusfile
 os-prober
-pacman
 pasystray
 patch
 pavucontrol
@@ -181,6 +181,7 @@ python-matplotlib
 python-numpy
 python-pandas
 python-ply
+python-poetry
 python-pycparser
 python-pyspnego
 python-pytorch-cuda
@@ -193,22 +194,25 @@ python-torchvision-cuda
 python-virtualenv
 qalculate-gtk
 rclone
+ripgrep
 rofi
+rust-analyzer
 rustup
 samba
+sbctl
 sed
 sudo
 system-config-printer
-texlive-bin
 thunar
 thunar-archive-plugin
 trash-cli
+tree
+ttf-cousine-nerd
 ttf-croscore
 ttf-dejavu
 ttf-roboto
 udisks2
 valgrind
-vim
 vlc
 wavpack
 wget
@@ -227,7 +231,6 @@ xorg-xrandr
 yasm
 zsh-autosuggestions
 zsh-syntax-highlighting
-zsh-theme-powerlevel10k
 ---------- AUR PACKAGES ----------
 bash-pipes
 braincurses
@@ -239,7 +242,7 @@ gksu
 google-chrome
 i3lock-color-git
 jupyterlab-lsp
-kalu-kde
+kalu
 mongodb-bin
 mongodb-tools
 nodejs-nodemon
@@ -248,16 +251,17 @@ numix-folders-git
 nvidia-system-monitor-qt
 oh-my-zsh-git
 python-pyautogui
-python-pylatexenc
 python-qiskit
 python-qiskit-ibm-runtime
 termsyn-font
+texlive-full
 thunar-shares-plugin-git
 ttf-font-awesome-4
 ttf-material-icons-git
 ttf-unifont
 yay
 youtube-dl
+zsh-theme-powerlevel10k
 
 ############### yay-sip -e ###############
 ---------- NORMAL PACKAGES ----------
@@ -270,43 +274,45 @@ base
 bison
 blueman
 bluez-utils
+chrpath
 clang
 cmake
 cups
+debugedit
 discord
 eog
 flex
 grub-customizer
-gtk3-demos
 htop
-inkscape
 intel-ucode
 lightdm-gtk-greeter-settings
 lxappearance
 man-db
 mousepad
 neofetch
+neovim
 nethack
 network-manager-applet
 nmap
 nvidia
 obs-studio
-optipng
 pasystray
 patch
 pkgconf
 playerctl
 polkit-gnome
 polybar
+python-ply
 python-pywal
-python-scikit-learn
 python-torchvision-cuda
-python-virtualenv
 qalculate-gtk
 rclone
-rustup
+ripgrep
+rust-analyzer
+sbctl
 system-config-printer
 trash-cli
+tree
 ttf-roboto
 valgrind
 vlc
@@ -321,7 +327,6 @@ xorg-xinit
 xorg-xinput
 zsh-autosuggestions
 zsh-syntax-highlighting
-zsh-theme-powerlevel10k
 ---------- AUR PACKAGES ----------
 bash-pipes
 braincurses
@@ -330,7 +335,7 @@ deadbeef-mpris2-plugin
 downgrade
 google-chrome
 jupyterlab-lsp
-kalu-kde
+kalu
 mongodb-bin
 nodejs-nodemon
 numix-circle-icon-theme-git
@@ -346,6 +351,7 @@ ttf-material-icons-git
 ttf-unifont
 yay
 youtube-dl
+zsh-theme-powerlevel10k
 
 ############### yay-sip -me ###############
 ---------- NORMAL PACKAGES ----------
@@ -362,9 +368,11 @@ bison
 blueman
 bluez-utils
 ca-certificates-mozilla
+chrpath
 clang
 cmake
 cups
+debugedit
 discord
 dunst
 efibootmgr
@@ -377,14 +385,12 @@ findutils
 flex
 gawk
 gcc
-gdb
 gettext
 git
 grep
 groff
 grub
 grub-customizer
-gtk3-demos
 gvfs
 gvfs-mtp
 gvfs-smb
@@ -392,7 +398,6 @@ gzip
 htop
 i3-wm
 imlib2
-inkscape
 intel-ucode
 jupyterlab
 libid3tag
@@ -411,6 +416,7 @@ mousepad
 mpg123
 mypy
 neofetch
+neovim
 nethack
 network-manager-applet
 nmap
@@ -425,10 +431,8 @@ nvidia-settings
 obs-studio
 openexr
 openssh
-optipng
 opusfile
 os-prober
-pacman
 pasystray
 patch
 pavucontrol
@@ -442,6 +446,7 @@ python-matplotlib
 python-numpy
 python-pandas
 python-ply
+python-poetry
 python-pycparser
 python-pyspnego
 python-pytorch-cuda
@@ -454,22 +459,25 @@ python-torchvision-cuda
 python-virtualenv
 qalculate-gtk
 rclone
+ripgrep
 rofi
+rust-analyzer
 rustup
 samba
+sbctl
 sed
 sudo
 system-config-printer
-texlive-bin
 thunar
 thunar-archive-plugin
 trash-cli
+tree
+ttf-cousine-nerd
 ttf-croscore
 ttf-dejavu
 ttf-roboto
 udisks2
 valgrind
-vim
 vlc
 wavpack
 wget
@@ -488,7 +496,6 @@ xorg-xrandr
 yasm
 zsh-autosuggestions
 zsh-syntax-highlighting
-zsh-theme-powerlevel10k
 ---------- AUR PACKAGES ----------
 bash-pipes
 braincurses
@@ -500,7 +507,7 @@ gksu
 google-chrome
 i3lock-color-git
 jupyterlab-lsp
-kalu-kde
+kalu
 mongodb-bin
 mongodb-tools
 nodejs-nodemon
@@ -509,13 +516,14 @@ numix-folders-git
 nvidia-system-monitor-qt
 oh-my-zsh-git
 python-pyautogui
-python-pylatexenc
 python-qiskit
 python-qiskit-ibm-runtime
 termsyn-font
+texlive-full
 thunar-shares-plugin-git
 ttf-font-awesome-4
 ttf-material-icons-git
 ttf-unifont
 yay
 youtube-dl
+zsh-theme-powerlevel10k

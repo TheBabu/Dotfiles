@@ -4,7 +4,7 @@ font pango:Roboto 10
 floating_modifier $mod
 
 #Keybindings
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 #Windows

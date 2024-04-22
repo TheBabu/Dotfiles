@@ -6,6 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#Aliases
+alias vim="nvim"
+
 #Setup
 ZSH=/usr/share/oh-my-zsh/
 ZSH_CUSTOM=/usr/share/zsh/
@@ -16,7 +19,7 @@ POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_HIDE_BRANCH_ICON=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv history time)
 
 #Home
 POWERLEVEL9K_HOME_ICON=""
@@ -34,6 +37,7 @@ POWERLEVEL9K_RIGHT_SEGMENT_END_SEPARATOR=""
 POWERLEVEL9K_LINUX_ARCH_ICON=" "
 POWERLEVEL9K_OS_ICON_BACKGROUND="238"
 POWERLEVEL9K_OS_ICON_FOREGROUND="249"
+POWERLEVEL9K_PYTHON_ICON=""
 
 #Directory
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
