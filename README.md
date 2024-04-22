@@ -7,6 +7,9 @@ Some of my configuration files (dotfiles)!
 - polybar
 - oh-my-zsh
 - neovim
+- rofi
+- dunst
+- miscellaneous `bin` scripts
 
 # Base Themes
 - polybar (https://github.com/jaagr/dots/blob/master/.local/etc/themer/themes/space/polybar)
