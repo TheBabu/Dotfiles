@@ -49,9 +49,6 @@ M.ui = {
         St_InsertModeSep = { fg = "blue" },
         St_VisualMode = { bg = "purple" },
         St_VisualModeSep = { fg = "purple" },
-    },
-    hl_add = {
-        Modified = { fg = "yellow", bg = "statusline_bg" }
     }
 }
 
