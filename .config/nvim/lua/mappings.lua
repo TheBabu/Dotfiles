@@ -4,7 +4,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map({ "n", "v", "i" }, "<A-space>", "<ESC>")
--- map("i", "<CR>", "<CR>x<BS>", { noremap = true })
+-- map("i", "<CR>", "<CR>x<BS>", { noremap = true, silent = true })
 -- map("n", "o", "ox<BS>", { noremap = true })
 -- map("n", "O", "Ox<BS>", { noremap = true })
 
@@ -29,11 +29,9 @@ map("v", "<A-c>", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.v
 map("n", "<tab>", "")
 map("n", "<S-tab>", "")
 map("n", "<F5>", require("dap").continue, { desc = "Continue" })
-map("n", "<F6>", require("dap").run_last, { desc = "Run last" })
 map("n", "<F10>", require("dap").step_over, { desc = "Step over" })
 map("n", "<F11>", require("dap").step_into, { desc = "Step into" })
 map("n", "<F12>", require("dap").step_out, { desc = "Step out" })
 map("n", "<leader>b", require("dap").toggle_breakpoint, { desc = "Toggle breakpoint" })
 map("n", "<leader>j", ":HopPattern<CR>", { desc = "Hop Pattern" })
--- map("i", "<CR>", "<CR>x<BS>", { silent = true })
 
