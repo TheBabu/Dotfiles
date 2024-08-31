@@ -10,7 +10,8 @@ return {
         "rust",
         "bash",
         "python",
-        "comment"
+        "comment",
+        "markdown"
     }
 }
 

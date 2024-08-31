@@ -10,7 +10,7 @@ for _, lsp in ipairs(servers) do
         on_attach = on_attach,
         on_init = on_init,
         capabilities = capabilities,
-        settings = {
+        settings = lsp == "pylsp" and {
             pylsp = {
                 plugins = {
                     pycodestyle = {
@@ -18,7 +18,7 @@ for _, lsp in ipairs(servers) do
                     }
                 }
             }
-        }
+        } or {}
     })
 end
 

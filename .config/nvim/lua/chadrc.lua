@@ -40,7 +40,7 @@ M.ui = {
         lazyload = false
     },
     nvdash = {
-       load_on_startup = true
+        load_on_startup = true
     },
     hl_override = {
         St_NormalMode = { bg = "green" },
@@ -48,7 +48,7 @@ M.ui = {
         St_InsertMode = { bg = "blue" },
         St_InsertModeSep = { fg = "blue" },
         St_VisualMode = { bg = "purple" },
-        St_VisualModeSep = { fg = "purple" },
+        St_VisualModeSep = { fg = "purple" }
     }
 }
 
