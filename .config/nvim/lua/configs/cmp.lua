@@ -16,6 +16,10 @@ return {
                 return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
             end
         },
+    },
+    window = {
+        completion = { border = "rounded" },
+        documentation = { border = "rounded" },
     }
 }
 

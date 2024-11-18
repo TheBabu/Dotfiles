@@ -33,3 +33,10 @@ map("n", "<leader>d", ":bd<CR>", { desc = "Delete buffer" })
 map("n", "<leader>b", require("dap").toggle_breakpoint, { desc = "Toggle breakpoint" })
 map("n", "<leader>j", ":HopPattern<CR>", { desc = "Hop Pattern" })
 
+map("n", "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})
+

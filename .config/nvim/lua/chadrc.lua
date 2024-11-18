@@ -6,8 +6,6 @@ local sep_l = "█"
 local sep_r = "█"
 
 M.ui = {
-    ---@diagnostic disable-next-line
-    theme = "neodark",
     statusline = {
         separator_style = "block",
         modules = {
@@ -39,9 +37,11 @@ M.ui = {
         order = { "treeOffset", "buffers", "tabs" },
         lazyload = false
     },
-    nvdash = {
-        load_on_startup = true
-    },
+}
+
+M.base46 = {
+    ---@diagnostic disable-next-line
+    theme = "neodark",
     hl_override = {
         St_NormalMode = { bg = "green" },
         St_NormalModeSep = { fg = "green" },
@@ -50,6 +50,10 @@ M.ui = {
         St_VisualMode = { bg = "purple" },
         St_VisualModeSep = { fg = "purple" }
     }
+}
+
+M.nvdash = {
+    load_on_startup = true
 }
 
 return M

@@ -14,8 +14,8 @@ return {
     },
     {
         "CRAG666/code_runner.nvim",
-        lazy = false,
-        opts = require("configs.crunner")
+        opts = require("configs.crunner"),
+        event = "VeryLazy"
     },
     {
         "williamboman/mason.nvim",
@@ -66,6 +66,12 @@ return {
         "smoka7/hop.nvim",
         config = true,
         lazy = false
+    },
+    {
+        "nvzone/volt"
+    },
+    {
+        "nvzone/menu"
     },
 }
 
