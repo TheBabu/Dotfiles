@@ -67,11 +67,4 @@ return {
         config = true,
         lazy = false
     },
-    {
-        "nvzone/volt"
-    },
-    {
-        "nvzone/menu"
-    },
 }
-
