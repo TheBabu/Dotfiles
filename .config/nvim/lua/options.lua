@@ -15,6 +15,10 @@ local fn = vim.fn
 fn.sign_define("DapBreakpoint", { text = "", texthl = "Boolean" })
 fn.sign_define("DapStopped", { text = "󰐊" })
 
+local cmd = vim.cmd
+cmd("aunmenu PopUp.How-to\\ disable\\ mouse")
+cmd("aunmenu PopUp.-1-")
+
 local ibl_hooks = require("ibl.hooks")
 ibl_hooks.clear_all()
 

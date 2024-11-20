@@ -25,6 +25,7 @@ M.ui = {
             cwd = function()
                 local icon = "%#Pmenu# 󰉋"
                 local name = vim.loop.cwd()
+                ---@diagnostic disable-next-line
                 name = " " .. (name:match "([^/\\]+)[/\\]*$" or name) .. " "
                 return (vim.o.columns > 85 and (icon .. name)) or ""
             end,
@@ -36,7 +37,7 @@ M.ui = {
     tabufline = {
         order = { "treeOffset", "buffers", "tabs" },
         lazyload = false
-    },
+    }
 }
 
 M.base46 = {
