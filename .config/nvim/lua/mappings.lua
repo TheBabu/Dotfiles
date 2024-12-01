@@ -5,7 +5,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map({ "n", "v", "i" }, "<A-space>", "<ESC>")
 
-map({ "n", "v" }, "<A-a>", ":Tab /=><CR>", { desc = "Align Rust match operators" })
+map({ "n", "v" }, "<A-a>", ":Tab /:<CR> | :Tab /=<CR>", { desc = "Align Python type hinted equal signs" })
 map({ "n", "v" }, "<A-s>", ":Tab /=<CR>", { desc = "Align equal signs" })
 map({ "n", "v" }, "<A-d>", ":Telescope<CR>")
 map({ "n", "v" }, "<A-f>", ":RunCode<CR>i", { desc = "Run code" })
@@ -20,6 +20,7 @@ map({ "t" }, "<A-e>", "<C-\\><C-N>", { desc = "Exit Terminal Mode" })
 map({ "n", "v" }, "<A-i>", function() require("nvchad.tabufline").move_buf(-1) end, { desc = "Move NvChad buffer back" })
 map({ "n", "v" }, "<A-o>", function() require("nvchad.tabufline").move_buf(1) end, { desc = "Move NvChad buffer forward" })
 
+map({ "n", "v" }, "<A-z>", ":Tab /=><CR>", { desc = "Align Rust match operators" })
 map("n", "<A-c>", "gcc", { desc = "Comment Toggle", remap = true })
 map("v", "<A-c>", "gc", { desc = "Comment Toggle", remap = true })
 
