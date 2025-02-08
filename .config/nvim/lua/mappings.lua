@@ -6,7 +6,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map({ "n", "v", "i" }, "<A-space>", "<ESC>")
 
 map({ "n", "v" }, "<A-a>", ":Tab /:<CR> | :Tab /=<CR>", { desc = "Align Python type hinted equal signs" })
-map({ "n", "v" }, "<A-s>", ":Tab /=<CR>", { desc = "Align equal signs" })
+map({ "n", "v" }, "<A-s>", ":Tab /=.*/<CR>", { desc = "Align equal signs" })
 map({ "n", "v" }, "<A-d>", ":Telescope<CR>")
 map({ "n", "v" }, "<A-f>", ":RunCode<CR>i", { desc = "Run code" })
 map({ "n", "v" }, "<A-g>", require("dapui").toggle, { desc = "Toggle debugger" })
