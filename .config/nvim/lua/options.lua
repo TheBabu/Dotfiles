@@ -22,3 +22,5 @@ cmd("aunmenu PopUp.-1-")
 local ibl_hooks = require("ibl.hooks")
 ibl_hooks.clear_all()
 
+vim.hl = vim.highlight
+

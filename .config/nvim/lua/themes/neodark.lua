@@ -75,7 +75,8 @@ M.polish_hl = {
         ["@lsp.type.namespace.rust"] = { fg = M.base_30.purple },
         ["@keyword.import.rust"] = { fg = M.base_30.green },
         ["@keyword.modifier"] = { fg = M.base_30.teal },
-        ["@keyword.exception"] = { fg = M.base_30.red }
+        ["@keyword.exception"] = { fg = M.base_30.red },
+        ["@constant"] = { fg = M.base_16.base05 }
     },
 }
 
