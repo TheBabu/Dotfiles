@@ -17,7 +17,7 @@ return {
         event = "VeryLazy",
         opts = function()
             return require("configs.crunner")
-        end,
+        end
     },
     {
         "williamboman/mason.nvim",
