@@ -83,7 +83,7 @@ bindsym XF86Calculator exec qalculate-gtk
 #bindsym XF86PowerOff exec ~/.bin/oblogout-launch
 
 #Special Keybindings
-bindsym $mod+y fullscreen disable; floating enable; resize set 600 375; move window to position 1300 55
+bindsym $mod+y fullscreen disable; floating enable; resize set 800 450; move window to position 1110 44
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+p exec --no-startup-id polybar-msg cmd restart
@@ -92,6 +92,7 @@ bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
 #bindsym $mod+x exec --no-startup-id autorandr -c
 bindsym $mod+a exec --no-startup-id xfce4-screenshooter --region -c
+bindsym $mod+Shift+s exec --no-startup-id xfce4-screenshooter --region -c
 bindsym Print exec --no-startup-id xfce4-screenshooter --region -c
 
 #Resize
@@ -115,6 +116,12 @@ bindsym $mod+r mode "Resize"
 for_window [class="Blueman"] floating enable
 for_window [class="Oblogout"] floating enable
 for_window [class="Qalculate"] floating enable
+for_window [class="FileRoller"] floating enable
+for_window [class="Xfce4-clipman-history"] floating enable
+for_window [class="pavucontrol"] floating enable
+for_window [class="Google-chrome" window_role="pop-up"] floating enable
+for_window [instance="crx_eikjhbkpemdappjfcmdeeeamdpkgabmk"] floating disable
+assign [instance="crx_eikjhbkpemdappjfcmdeeeamdpkgabmk"] 9
 assign [class="discord"] 10
 force_xinerama yes
 focus_follows_mouse no

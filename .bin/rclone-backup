@@ -19,13 +19,14 @@ for file in ~/* \
 			~/.config/xfce4 \
 			~/.gtkrc-2.0 \
 			~/.hidden \
+            ~/.themes \
 			~/.zshrc \
 			/etc/default/grub \
+            /boot/grub/grub.cfg \
 			/etc/mkinitcpio.conf \
 			/etc/lightdm/lightdm-gtk-greeter.conf \
 			/etc/lightdm/Sketch_PFP_Discord.png \
-			/etc/lightdm/Wallpaper.png \
-			/usr/share/themes/Arc-Undead-Custom; do
+			/etc/lightdm/Wallpaper.png; do
 	echo "############### Backup ${file} ###############"
 	rclone sync -l -v --transfers 30 ${file} google-drive:Backup${file} --backup-dir google-drive:Backup/OLD${file}
 done

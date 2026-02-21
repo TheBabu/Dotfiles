@@ -1,47 +1,47 @@
 #!/bin/bash
 #Autostart for i3
 
-if ! pgrep -x discord >/dev/null
+if ! pgrep -x -f "discord" >/dev/null
 then discord &
 fi
 
-if ! pgrep -x kalu >/dev/null
+if ! pgrep -x -f "kalu" >/dev/null
 then kalu &
 fi
 
-if ! pgrep -x blueman-applet >/dev/null
+if ! pgrep -x -f "blueman-applet" >/dev/null
 then blueman-applet &
 fi
 
-if ! pgrep -x nm-applet >/dev/null
+if ! pgrep -x -f "nm-applet" >/dev/null
 then nm-applet &
 fi
 
-if ! pgrep -x xfce4-clipman >/dev/null
+if ! pgrep -x -f "xfce4-clipman" >/dev/null
 then xfce4-clipman &
 fi
 
-if ! pgrep -x xcompmgr -c -f -n >/dev/null
+if ! pgrep -x -f "xcompmgr -c -f -n" >/dev/null
 then xcompmgr -c -f -n &
 fi
 
-if ! pgrep -x polkit-gnome-authentication-agent-1 >/dev/null
+if ! pgrep -x -f "polkit-gnome-authentication-agent-1" >/dev/null
 then  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
-if ! pgrep -x pasystray -a >/dev/null
-then pasystray -a &
+if ! pgrep -x -f "pasystray -a -i 5" >/dev/null
+then pasystray -a -i 5 &
 fi
 
-if ! pgrep -x i3-battery-popup -n -L 30 -t 1m >/dev/null
-then i3-battery-popup -n -L 30 -t 1m &
-fi
+# if ! pgrep -x -f "i3-battery-popup -n -L 30 -t 1m" >/dev/null
+# then i3-battery-popup -n -L 30 -t 1m &
+# fi
 
-#if ! pgrep -x /usr/lib/xfce4/notifyd/xfce4-notifyd >/dev/null
+#if ! pgrep -x -f "/usr/lib/xfce4/notifyd/xfce4-notifyd" >/dev/null
 #then  /usr/lib/xfce4/notifyd/xfce4-notifyd &
 #fi
 
-#if ! pgrep -x dunst >/dev/null
+#if ! pgrep -x -f "dunst" >/dev/null
 #then dunst &
 #fi
 
