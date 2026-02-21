@@ -1,8 +1,8 @@
 return {
     {
         "stevearc/conform.nvim",
-        config = function()
-            require("configs.conform")
+        opts = function()
+            return require("configs.conform")
         end
     },
     {
