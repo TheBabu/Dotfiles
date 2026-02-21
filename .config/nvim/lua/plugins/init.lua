@@ -14,29 +14,41 @@ return {
     },
     {
         "CRAG666/code_runner.nvim",
-        opts = require("configs.crunner"),
-        event = "VeryLazy"
+        event = "VeryLazy",
+        opts = function()
+            return require("configs.crunner")
+        end,
     },
     {
         "williamboman/mason.nvim",
-        opts = require("configs.mason")
+        opts = function()
+            return require("configs.mason")
+        end
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        opts = require("configs.treesitter")
+        opts = function()
+            return require("configs.treesitter")
+        end
     },
     {
         "nvim-telescope/telescope.nvim",
-        opts = require("configs.telescope")
+        opts = function()
+            return require("configs.telescope")
+        end
     },
     {
         "hrsh7th/nvim-cmp",
-        opts = require("configs.cmp")
+        opts = function()
+            return require("configs.cmp")
+        end
     },
     {
         "andweeb/presence.nvim",
-        config = require("configs.presence"),
-        lazy = false
+        lazy = false,
+        config = function()
+            require("configs.presence")
+        end
     },
     {
         "godlygeek/tabular",

@@ -1,11 +1,13 @@
+local cmp = require("cmp")
+
 return {
-    preselect = require("cmp").PreselectMode.None,
+    preselect = cmp.PreselectMode.None,
     completion = { completeopt = "menu, menuone, noselect" },
-    mapping = require("cmp").mapping.preset.insert({
-        ["<Down>"] = require("cmp").mapping.select_next_item(),
-        ["<Up>"] = require("cmp").mapping.select_prev_item(),
-        ["<CR>"] = require("cmp").mapping.confirm({
-            behavior = require("cmp").ConfirmBehavior.Insert,
+    mapping = cmp.mapping.preset.insert({
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
             select = false
         }),
     }),
@@ -13,7 +15,7 @@ return {
         {
             name = "nvim_lsp",
             entry_filter = function(entry)
-                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+                return cmp.lsp.CompletionItemKind.Snippet ~= entry:get_kind()
             end
         },
     },
