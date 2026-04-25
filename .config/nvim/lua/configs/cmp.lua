@@ -4,6 +4,8 @@ return {
     preselect = cmp.PreselectMode.None,
     completion = { completeopt = "menu, menuone, noselect" },
     mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = cmp.mapping.select_next_item(),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<CR>"] = cmp.mapping.confirm({
