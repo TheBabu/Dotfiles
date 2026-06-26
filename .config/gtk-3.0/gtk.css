@@ -8,3 +8,9 @@ window > image {
 	-gtk-icon-transform: scale(1.0);
 }
 
+window decoration,
+window decoration:backdrop {
+    box-shadow: none;
+    margin: 0;
+}
+
